@@ -57,6 +57,5 @@ export class LoginPage {
     async signOut(): Promise<any> {
         await this.clickUserDropdown()
         await this.clickLogOutBtn()
-        await BrowserActions.waitForVisible(this.logInLinkEle)
     }   
 }

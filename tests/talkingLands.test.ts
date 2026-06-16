@@ -37,6 +37,11 @@ test("Login, Search Location, Change Location, Select Location and Logout", asyn
         await homePage.clickMarkerIcon()
         await expect.soft(homePage.activeLocationEle, "Validate the selected location is in active state").toBeVisible()
     })
+    
+    await test.step('Logout from application', async () => {
+        await loginPage.signOut()
+        await expect.soft(loginPage.logInLinkEle, "Validate the login link is displayed").toBeVisible() 
+    })
 
     
 })
