@@ -1,9 +1,8 @@
 import { Locator, Page, errors, expect } from "@playwright/test"
-import { browserContext, browserPage } from "../pages/orangeHrmFixture"
 import { keyboardActions, POSITION, Timeout } from "./constants"
+import { browserPage } from "../pages/talkingLandsFixture"
 
 export default class BrowserActions {
-    private static pagePromise: Promise<Page>
     constructor(public page: Page) { }
 
     static async click(sElement: Locator): Promise<void> {
@@ -46,5 +45,9 @@ export default class BrowserActions {
     static async reload(page:Page): Promise<void> {
         await page.reload()
     } 
+
+    static async keyPress(page: Page, Keys: keyboardActions): Promise<void> {
+        await page.keyboard.press(Keys)
+    }
 }
 
